@@ -12,9 +12,15 @@ AppBar customAppBar(String appTitle) {
         onPressed: () {},
         icon: const Icon(Icons.attach_money),
       ),
-      IconButton(
-        onPressed: () {},
-        icon: const Icon(Icons.more_vert),
+      PopupMenuButton(
+        itemBuilder: (context) => [
+          const PopupMenuItem(
+            child: Text('Meu perfil'),
+          ),
+          const PopupMenuItem(
+            child: Text('Configurações'),
+          ),
+        ],
       ),
     ],
   );

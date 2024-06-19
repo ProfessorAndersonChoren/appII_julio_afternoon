@@ -3,8 +3,9 @@ import 'package:parking/screens/home/home.dart';
 
 void main() {
   runApp(
-    MaterialApp(
+    const MaterialApp(
       home: Home(),
-    )
+      debugShowCheckedModeBanner: false,
+    ),
   );
 }
