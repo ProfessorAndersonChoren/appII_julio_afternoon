@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:parking/model/ticket.dart';
+import 'package:parking/model/vacancy.dart';
+import 'package:parking/model/vehicle.dart';
+import 'package:parking/model/vehicle_type.dart';
+import 'package:parking/screens/home/components/ticket_card.dart';
 import 'package:parking/screens/shared/custom_appbar.dart';
 
 class Home extends StatelessWidget {
@@ -6,6 +11,24 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var corvette = Vehicle(
+      licensePlate: 'JUE-0593',
+      brand: 'Chevrolet',
+      model: 'Corvette',
+      vehicleType: VehicleType.car,
+    );
+    var vacancy = Vacancy(
+      number: 1,
+      description: 'Vaga 0001',
+      vehicleType: VehicleType.car,
+    );
+    var ticket = Ticket(
+      number: 1,
+      vacancy: vacancy,
+      vehicle: corvette,
+      entryTime: TimeOfDay.now(),
+    );
+
     return Scaffold(
       appBar: customAppBar('Parking Control'),
       floatingActionButton: FloatingActionButton(
@@ -54,6 +77,12 @@ class Home extends StatelessWidget {
                   ],
                 ),
               ],
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: 4,
+                itemBuilder: (context, index) => TicketCard(ticket: ticket),
+              ),
             ),
           ],
         ),
