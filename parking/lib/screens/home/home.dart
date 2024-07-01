@@ -32,7 +32,9 @@ class Home extends StatelessWidget {
     return Scaffold(
       appBar: customAppBar('Parking Control'),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, 'new_ticket');
+        },
         child: const Icon(Icons.add),
       ),
       body: Padding(

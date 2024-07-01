@@ -21,6 +21,7 @@ class TicketCard extends StatelessWidget {
             horizontal: 8,
           ),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Badge(
                 label: Text(
@@ -40,6 +41,22 @@ class TicketCard extends StatelessWidget {
                   ),
                   Text(
                     ticket.vacancy.toString(),
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  Image.asset(
+                    'assets/plate.png',
+                    width: 48,
+                  ),
+                  const SizedBox(
+                    width: 8,
+                  ),
+                  Text(
+                    ticket.vehicle.licensePlate,
+                    style: Theme.of(context).textTheme.labelLarge,
                   ),
                 ],
               ),

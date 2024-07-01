@@ -10,4 +10,9 @@ class Vacancy {
     required this.description,
     required this.vehicleType,
   });
+
+  @override
+  String toString() {
+    return number.toString().padLeft(4, '0');
+  }
 }
